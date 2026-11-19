@@ -1,4 +1,5 @@
-const ventas = require("./datos.js");
+//const ventas = require("./datos.js");
+const ventas = []
 
 // Cantidad*precio 
 function valorVentas(ventas){
@@ -18,9 +19,7 @@ function totalVendido(ventas){
     let TotalVendido = 0;
     for (const i of valorVentas(ventas)){
         TotalVendido += i
-        
     }
-   
     return TotalVendido
 }
 
@@ -72,7 +71,8 @@ console.log("El promedio es: " , ticketPromedio(ventas))
 function ventasPorCiudad(ventas, ciudad){
     let totalCiudad = 0;
     for (i of ventas){
-        if (i.ciudad == ciudad.toLowerCase()){
+        
+        if (i.ciudad.toLowerCase() == ciudad.toLowerCase()){
             totalCiudad += i.precio
         }
     }

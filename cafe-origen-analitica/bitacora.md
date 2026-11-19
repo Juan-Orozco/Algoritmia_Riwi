@@ -35,17 +35,30 @@
 ---
 
 ## 3. Patrones con ciclos manuales (Minirreto 2)
+  Verifica a mano al menos dos resultados con una tabla de traza en la bitácora y comprueba que coinciden con los del programa. 
 
-- **`totalVendido(ventas)`**:
-  - *Patrón usado (contador, acumulador, filtro, extremo)*:
-- **`totalUnidades(ventas)`**:
-  - *Patrón usado*:
-- **`ventaMayorValor(ventas)`**:
-  - *Patrón usado*:
-- **`ventasDeCiudad(ventas, ciudad)`**:
-  - *Patrón usado*:
-- **`promedioPorVenta(ventas)`**:
-  - *Patrón usado*:
+### valorVentas
+
+| Vuelta | cantidad | ventas | Operación         | Resultado |
+| :---:  | :---:    | :---:  | :---              | :---:     |
+| 0      | -        | -      | -                 | -         |
+| 1      | 2        | 42000  | cantidad * ventas | 84000     |
+| 2      | 1        | 26000  | cantidad * ventas | 26000     |
+| 3      | 2        | 95000  | cantidad * ventas | 190000    |
+| 4      | 1        | 42000  | cantidad * ventas | 42000     |
+| 5      | 3        | 45000  | cantidad * ventas | 135000    |
+| 6      | 2        | 26000  | cantidad * ventas | 52000     |
+
+### Total Precios (usa los resultados de valorVentas)
+
+| Vuelta | ventas | Operación       | Resultado |
+| :---:  | :---:  | :---            | :---:     |
+| 0      | -      | -               | -         |
+| 1      | 84000  | 0 + 84000       | 84000     |
+| 2      | 26000  | 84000 + 26000   | 110000    |
+| 3      | 190000 | 110000 + 190000 | 300000    |
+| 4      | 42000  | 300000 + 42000  | 342000    |
+| 5      | 135000 | 342000 + 135000 | 477000    |
 
 ---
 
