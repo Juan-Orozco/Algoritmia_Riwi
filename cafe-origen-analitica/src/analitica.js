@@ -1,31 +1,82 @@
-    const tabla = require("./datos.js");
+const ventas = require("./datos.js");
 
 // Cantidad*precio 
 function valorVentas(ventas){
-    let TotalVentas = 0;
-    for (let i of ventas){
-        TotalVentas = i.precio * i.cantidad 
-
-
+    const TodasLasVentas = [];
+    for (const i of ventas) {
+        
+        TodasLasVentas.push(i.cantidad * i.precio) 
+        
     }
-    console.log(TotalVentas)
+    return TodasLasVentas
 }
-valorVentas(tabla)
+console.log("Devolvio:" ,valorVentas(ventas))
+console.log("-----------------------------------")
 
-/*
 //1. cuánto se vendió en total
-let Totalprecio = 0;
-for (let i of ventas){
-    Totalprecio += i.precio
+function totalVendido(ventas){
+    let TotalVendido = 0;
+    for (const i of valorVentas(ventas)){
+        TotalVendido += i
+        
+    }
+   
+    return TotalVendido
 }
-console.log("El total de ventas fueron: "+ Totalprecio)
-*/
+
+console.log("Total vendido" ,totalVendido(ventas))
 
 
 //2. cuántas unidades salieron
-
+function UnidadesVendidas(ventas)
+{
+    let TotalUnidades = 0;
+    for (const i of ventas)
+    {
+        TotalUnidades += i.cantidad
+    }
+    return TotalUnidades
+}
+console.log("Unidades vendidas:" ,UnidadesVendidas(ventas))
 
 //3. cuál fue la venta más grande 
 
-//4.cuánto gasta en promedio un cliente por compra (el ticket promedio)
+function ventaMayor(ventas)
+{
+    let veMayor = 0;
+    for (const i of ventas )
+    {
+          if (veMayor < i.precio)
+          {
+            veMayor = i.precio
+          }
+    }
+    return veMayor
+}
+console.log("La venta mayor es: " , ventaMayor(ventas))
 
+//4.cuánto gasta en promedio un cliente por compra (el ticket promedio)
+function ticketPromedio(ventas)
+{
+    let Promedio = 0;
+
+    Promedio = totalVendido(ventas) /UnidadesVendidas(ventas)
+    
+    return Promedio
+}
+
+console.log("El promedio es: " , ticketPromedio(ventas))
+
+// 5. Total vendido por cada ciudad 
+
+function ventasPorCiudad(ventas, ciudad){
+    let totalCiudad = 0;
+    for (i of ventas){
+        if (i.ciudad == ciudad.toLowerCase()){
+            totalCiudad += i.precio
+        }
+    }
+    return totalCiudad
+}
+
+console.log("El total por ciudad es:  " , ventasPorCiudad(ventas, "Medellín" ))
