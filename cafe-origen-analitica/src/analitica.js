@@ -1,5 +1,7 @@
-//const ventas = require("./datos.js");
-const ventas = []
+const ventas = require("./datos.js");
+//const ventas = []
+
+//-------------------------------- Ciclos for
 
 // Cantidad*precio 
 function valorVentas(ventas){
@@ -73,10 +75,52 @@ function ventasPorCiudad(ventas, ciudad){
     for (i of ventas){
         
         if (i.ciudad.toLowerCase() == ciudad.toLowerCase()){
-            totalCiudad += i.precio
+            totalCiudad += (i.precio*i.cantidad)
         }
     }
     return totalCiudad
 }
 
 console.log("El total por ciudad es:  " , ventasPorCiudad(ventas, "Medellín" ))
+
+
+// -------------------------------- métodos de arreglo
+console.log("-----------------------------métodos de arreglo----------------------------------------------")
+
+function valorVentasM(ventas)
+{
+    const totalVenta = ventas.map((i) => i.cantidad * i.precio)
+    return totalVenta
+}
+
+console.log("Devolvio:" ,valorVentasM(ventas))
+
+function totalVendidoM(ventas)
+{
+    const TotalVendidos = valorVentas(ventas).reduce((sum , i) => sum += i, 0)
+    return TotalVendidos
+}
+console.log("Total vendido:" ,totalVendidoM(ventas))
+
+function unidadesVendidasM(ventas)
+{
+    const UnidadesVendidas = ventas.reduce((sum , i ) => sum += i.cantidad, 0)
+    return UnidadesVendidas
+}
+console.log("Total unidades vendidas:" ,unidadesVendidasM(ventas))
+
+function ventasPorCiudadM(ventas , ciudad)
+{
+   
+    const TotalCiudad = ventas.reduce((CiTotal, i) => {
+            if(ciudad.toLowerCase() == i.ciudad.toLowerCase() )
+            {
+                return CiTotal  + (i.cantidad * i.precio) 
+            }
+        return CiTotal
+            
+    }, 0)
+    return TotalCiudad
+    
+}
+console.log("Total valor ciudad:" ,ventasPorCiudadM(ventas , "medellín"))
