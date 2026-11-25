@@ -124,3 +124,15 @@ function ventasPorCiudadM(ventas , ciudad)
     
 }
 console.log("Total valor ciudad:" ,ventasPorCiudadM(ventas , "medellín"))
+
+module.exports = {
+    valorVentas,
+    valorVentasM,
+    totalVendidoM,
+    totalVendido,
+    unidadesVendidasM,
+    UnidadesVendidas,
+    ventasPorCiudadM,
+    ventasPorCiudad
+
+};
