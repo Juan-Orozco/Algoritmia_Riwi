@@ -63,13 +63,19 @@
 ---
 
 ## 4. Del ciclo al método: Preguntas de transformación y agrupación (Minirreto 3)
+Se crearon con las dos formas ciclos y metodos
 
 - **¿Qué filtro? (`.filter`)**:
+    no use en estos ejercicio
 - **¿Qué transformo? (`.map`)**:
+    valorVentasM pedimos que se multiplicara pero necesitabamos el mismo tamñao del arreglo
 - **¿Qué reduzco / acumulo? (`.reduce`)**:
+    En el ejercicio reducimos toda la informacion regada a un dato en especifico
+    que fue precio o cantidad para que se guardara por ciudad
 - **¿Cómo agrupo en un diccionario?**:
+    Diccionario[clave] = valor
 - **¿Cómo ordeno sin modificar el arreglo original? (`.sort`)**:
-
+    toSorted : Igual que sort, pero devuelve un arreglo nuevo.
 ---
 
 ## 5. Verificación del reporte y pureza de funciones (Minirreto 4)
